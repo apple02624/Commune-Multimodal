@@ -1,0 +1,76 @@
+const sidebarStructure = [
+  {
+    id: "dashboard",
+    title: "Dashboard",
+    name: "dashboard",
+    parent: true,
+    icon: "dashboard",
+    link: "#dashboard",
+  },
+  {
+    id: "Introduction",
+    title: "Introduction",
+    name: "Introduction",
+    parent: true,
+    icon: "introduction",
+    // child: [
+    //   {
+    //     id: "",
+    //     title: "General",
+    //     name: "General",
+    //     link: "/chatgpt/general",
+    //     icon: "dot",
+    //   },
+    //   {
+    //     id: "multimodal",
+    //     title: "Multimodal",
+    //     name: "Multimodal",
+    //     link: "/chatgpt/multimodal_gpt",
+    //     icon: "dot",
+    //   },
+    // ],
+    link: "#introduction",
+  },
+  {
+    id: "description",
+    title: "Technical Description",
+    name: "Technical Description",
+    parent: true,
+    icon: "description",
+    link: "#description",
+  },
+  {
+    id: "demonstrations",
+    title: "Demonstrations",
+    name: "Demonstrations",
+    parent: true,
+    icon: "demonstration",
+    link: "#demonstrations",
+  },
+  {
+    id: "Abstract",
+    title: "Abstract",
+    name: "Abstract",
+    parent: true,
+    link: "#abstract",
+    icon: "abstract",
+  },
+  {
+    id: "Help",
+    title: "Help",
+    name: "Help",
+    parent: true,
+    icon: "help",
+    link: "/help",
+  },
+  {
+    id: "Whitepaper",
+    title: "Whitepaper",
+    name: "Whitepaper",
+    parent: true,
+    icon: "paper",
+    link: "https://ai-secure.github.io/DMLW2022/assets/papers/7.pdf",
+  },
+];
+
+export { sidebarStructure };

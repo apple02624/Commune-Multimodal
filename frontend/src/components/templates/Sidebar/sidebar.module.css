@@ -1,0 +1,19 @@
+
+
+.brand {
+    height: 2.5rem;
+    align-items: center;
+    display: flex;
+    margin-right: 1rem;
+    min-width: 0;
+    color: black;
+    text-decoration: var(--ifm-link-decoration);
+    font-size: 16px;
+    padding: 0rem;
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.brand:hover,
+.active {
+    color: var(--ifm-link-hover-color);
+}
