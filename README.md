@@ -8,7 +8,7 @@ Based on the open-source multi-modal model [Commune](https://github.com/commune-
 
 # Commune Multimodal project
 
-This is a Next.js project
+This is a Next.js project 
 
 ## Getting Started
 
