@@ -8,7 +8,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ApiPromise, WsProvider } from "@polkadot/api";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { loadStripe } from "@stripe/stripe-js";
-import { Dropdown, Modal, Space, Select, MenuProps } from "antd";
+import { Modal, Space, Select } from "antd";
 import { useSelector } from "react-redux";
 import { parseEther } from "viem";
 import { useSendTransaction, useContractWrite } from "wagmi";
@@ -37,39 +37,6 @@ const community = [
 const userNavigation = [
   { name: "Profile", href: "/profile" },
   { name: "Settings", href: "#" },
-];
-
-const items: MenuProps["items"] = [
-  {
-    key: "1",
-    label: (
-      <span rel="noopener noreferrer" className="flex items-center">
-        Pay with Stripe
-        <Image
-          src={StripeImage}
-          alt="stripeImage"
-          width={24}
-          height={24}
-          className="rounded-md ml-auto"
-        />
-      </span>
-    ),
-  },
-  {
-    key: "2",
-    label: (
-      <span rel="noopener noreferrer" className="flex items-center">
-        Pay with Wallet
-        <Image
-          src={MetaMaskImage}
-          alt="MetaMaskImage"
-          width={24}
-          height={24}
-          className="rounded-md ml-2"
-        />
-      </span>
-    ),
-  },
 ];
 
 export default function NavigationBar() {
@@ -119,15 +86,6 @@ export default function NavigationBar() {
 
   const handleMetaMaskPayment = () => {
     setIsShowWalletPaymentModal(true);
-  };
-
-  const onClick: MenuProps["onClick"] = ({ key }) => {
-    if (key === "1") {
-      handleClickPayButton();
-    }
-    if (key === "2") {
-      handleMetaMaskPayment();
-    }
   };
 
   const handleWalletPaymentModalOpen = () => {

@@ -1,7 +1,7 @@
 "use client";
-import SidebarMenu from "@/components/templates/Sidebar/sidebar";
 import { useState } from "react";
 import Content from "./content";
+import SidebarMenu from "@/components/templates/Sidebar/sidebar";
 
 export default function Home() {
   const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);

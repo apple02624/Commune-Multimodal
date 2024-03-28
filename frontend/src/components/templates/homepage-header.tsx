@@ -1,25 +1,22 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ApiPromise, WsProvider } from "@polkadot/api";
-import { web3Accounts, web3Enable } from "@polkadot/extension-dapp";
+import { web3Enable } from "@polkadot/extension-dapp";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Modal from "antd/es/modal/Modal";
 import GitHubLogin from "react-github-login";
-import GithubImage from "../../../public/svg/github-mark.svg";
-import MetaMaskImage from "../../../public/svg/metamask.svg";
-import PolkadotImage from "../../../public/svg/polkadot.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { saveMetaMaskAddress } from "@/store/action/transaction.record.action";
+import { FaCodepen } from "react-icons/fa";
 import {
   MdEmojiEmotions,
   MdSlowMotionVideo,
   MdDataset,
-  MdDashboard,
 } from "react-icons/md";
-import { FaCodepen } from "react-icons/fa";
 import { RxBoxModel } from "react-icons/rx";
-import { IoNewspaperOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import GithubImage from "../../../public/svg/github-mark.svg";
+import MetaMaskImage from "../../../public/svg/metamask.svg";
+import PolkadotImage from "../../../public/svg/polkadot.svg";
+import { saveMetaMaskAddress } from "@/store/action/transaction.record.action";
 
 const words: string[] = [
   "developers.",
@@ -154,11 +151,6 @@ export default function HomepageHeader() {
     if (typeof window !== "undefined") {
       try {
         await web3Enable("Commune AI");
-        const accounts = await web3Accounts();
-        const provider = new WsProvider("wss://rpc.polkadot.io");
-        const polkadotAPI = await ApiPromise.create({ provider });
-        const address = accounts[0].address;
-        const data = await polkadotAPI.query.system.account(address);
       } catch (error) {
         console.error("Error connecting to wallet:", error);
       }

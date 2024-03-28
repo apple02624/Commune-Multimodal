@@ -1,25 +1,22 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+
 import { FC, useRef, useState } from "react";
 import SimpleBar from "simplebar-react";
+
 import "simplebar-react/dist/simplebar.min.css";
-import { sidebarStructure } from "./structure";
-import Link from "next/link";
 import Image from "next/image";
-import classes from "./sidebar.module.css";
-import { MdEmojiEmotions,MdSlowMotionVideo, MdDataset, MdDashboard } from "react-icons/md";
-import { FaCodepen } from "react-icons/fa";
-import { RxBoxModel } from "react-icons/rx";
-import { IoNewspaperOutline } from "react-icons/io5";
-import { FcAbout } from "react-icons/fc";
-import { GrMultiple, GrTechnology } from "react-icons/gr";
+import Link from "next/link";
 import { GiAbstract012 } from "react-icons/gi";
+import { GrMultiple, GrTechnology } from "react-icons/gr";
+import { IoNewspaperOutline } from "react-icons/io5";
+import { MdDashboard, MdSlowMotionVideo } from "react-icons/md";
+import { RxBoxModel } from "react-icons/rx";
+import { sidebarStructure } from "./structure";
 
 interface SidebarProps {
   setExpand: (value: boolean) => void;
 }
 
 const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
-  const profilePic = "/svg/commune.svg";
   const link = "/";
 
   const [openedMenu, setOpenedMenu] = useState<Record<string, any>>({});
@@ -79,7 +76,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
   };
 
   const generateIcon = (icon: string) => {
-    var icons_map: Record<string, JSX.Element> = {};
+    const icons_map: Record<string, JSX.Element> = {};
 
     icons_map["introduction"] = <GrMultiple width={50} height={50} />;
     icons_map["dashboard"] = <MdDashboard width={50} height={50} />;
@@ -142,7 +139,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
                       `${classesActive ? "h-2 w-2" : "h-1 w-1"}`,
                       "bg-current rounded-full duration-200",
                     ].join(" ")}
-                  ></div>
+                   />
                 </div>
               ) : (
                 generateIcon(item.icon)
