@@ -37,6 +37,7 @@ import ThemeProvider from '@/context/toggle-theme-provider';
 import './globals.css';
 import 'reactflow/dist/style.css';
 import { store } from "@/store/reducers/index"
+import SidebarMenu from '@/components/templates/Sidebar/sidebar';
 
 const { chains, publicClient } = configureChains(
   [mainnet, polygon, optimism, arbitrum, base, zora, sepolia, goerli],
@@ -85,6 +86,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -112,9 +114,14 @@ export default function RootLayout({
               <RainbowKitProvider chains={chains} coolMode theme={darkTheme()}>
                 <Provider store={store}>
                   <ThemeProvider>
+                  <SidebarMenu setExpand={setSideMenuIsExpand} />
                     {/* <Banner /> */}
                     <NavigationBar />
+                    <div   className={`flex-1 min-h-screen mx-0 bg-slate-100 transition-all duration-300 ease-in-out ${
+                      sideMenuIsExpand ? "md:ml-72" : "md:ml-20"
+                    }`}>
                     {children}
+                    </div>
                     <Footer />
                   </ThemeProvider>
                 </Provider>

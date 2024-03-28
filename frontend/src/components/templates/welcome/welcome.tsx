@@ -11,26 +11,8 @@ export default function WelcomeSection() {
               </span>
               !
             </h1>
-            <p className="hero__subtitle text-4xl text-center dark:text-white">
-              A place for{" "}
-              <span className="text-[#ffb4ed] dark:text-[#FFD6F5]">
-                everyone
-              </span>{" "}
-              to{" "}
-              <span className="text-[#6db1ff] dark:text-[#6db1ff]">
-                develop
-              </span>
-              ,
-              <span className="text-[#FF8F8F]  dark:text-[#FF8F8F]">
-                design, {" "}
-              </span>
-              <span className="text-[#ffb4ed]  dark:text-[#cfff76]">use</span>,{" "}
-              and{" "}
-              <span className="text-[#ffef40] dark:text-[#FFF7A1]">create</span>
-              .
-            </p>
           </div>
-          <div className="grid grid-cols-7 sm:h-[300px] lg:h-[500px] items-center justify-center px-3 gap-0">
+          {/* <div className="grid grid-cols-7 sm:h-[300px] lg:h-[500px] items-center justify-center px-3 gap-0">
             <div className="flex flex-col items-center justify-center text-transparent hover:dark:text-white hover:text-black duration-300 font-sans font-semibold text-lg">
               <a href="#blue" className="hover:no-underline">
                 <img
@@ -96,7 +78,7 @@ export default function WelcomeSection() {
               </a>
               <p>Whitepaper 📄</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     );
