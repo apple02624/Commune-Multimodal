@@ -31,6 +31,7 @@ import "@fontsource/source-code-pro";
 import { projectId } from "../config";
 import Loading from "@/components/molecules/bittensor/loading";
 import NavigationBar from "@/components/organisms/navbar/navigation-bar";
+import SidebarMenu from "@/components/templates/Sidebar/sidebar";
 import Footer from "@/components/templates/footer/footer";
 import Head from "@/components/templates/head";
 import ThemeProvider from "@/context/toggle-theme-provider";
@@ -86,6 +87,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
 
   useEffect(() => {
     const handleLoad = () => {
@@ -112,7 +114,14 @@ export default function RootLayout({
                 <ThemeProvider>
                   {/* <Banner /> */}
                   <NavigationBar />
-                  {children}
+                  <SidebarMenu setExpand={setSideMenuIsExpand} />
+                  <div
+                    className={`flex-1 min-h-screen mx-0 bg-slate-100 transition-all duration-300 ease-in-out ${
+                      sideMenuIsExpand ? "md:ml-72" : "md:ml-20"
+                    }`}
+                  >
+                    {children}
+                  </div>
                   <Footer />
                 </ThemeProvider>
               </Provider>
