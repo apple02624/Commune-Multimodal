@@ -301,6 +301,8 @@ const View = ({ models }: { models: MultimodalItemPropsType[] }) => {
                 id={item.id}
                 cardData={item.cardData}
                 author={item.author}
+                subdomain={item.subdomain}
+                likes={item.likes}
               />
             ))}
           </div>
