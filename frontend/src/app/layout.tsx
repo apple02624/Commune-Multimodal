@@ -110,7 +110,6 @@ export default function RootLayout({
             <RainbowKitProvider chains={chains} coolMode theme={darkTheme()}>
               <Provider store={store}>
                 <ThemeProvider>
-                  store={store}
                   {/* <Banner /> */}
                   <NavigationBar />
                   {children}
