@@ -1,11 +1,11 @@
 "use client";
 import classNames from "classnames";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { RxBoxModel } from "react-icons/rx";
 import classes from "./home.module.css";
 import HomepageHeader from "@/components/templates/homepage-header";
 import WelcomeSection from "@/components/templates/welcome/welcome";
-import { RxBoxModel } from "react-icons/rx";
-import {useRouter}  from 'next/navigation';
 
 function SectionWrapper({
   imageUrl,
@@ -42,9 +42,10 @@ function SectionWrapper({
 
 export default function Content() {
   const router = useRouter();
-  const openModelPage = () => {1
-    router.push('/models');
-  }
+  const openModelPage = () => {
+    1;
+    router.push("/models");
+  };
   return (
     <>
       <main className={classNames(classes.main, "flex flex-col ")}>
@@ -64,17 +65,16 @@ export default function Content() {
                     Get Started
                 </div>
                  */}
-                   <div
+                <div
                   className="bg-slate-900 rounded-lg bg-opacity-20 hover:bg-opacity-40 shadow-custom hover:shadow-2xl text-center 
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick= {openModelPage}
+                  onClick={openModelPage}
                 >
                   <RxBoxModel width={50} height={50} />
                   Model
                 </div>
-
               </div>
             </div>
           </div>

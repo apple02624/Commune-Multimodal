@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Button } from "antd";
 import Modal from "antd/es/modal/Modal";
 import Card from "@/components/atoms/card";
-import { Button } from "antd";
 
 export type MultimodalItemPropsType = {
   id: string;

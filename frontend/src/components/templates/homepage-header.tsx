@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -6,11 +7,7 @@ import { ConnectButton } from "@rainbow-me/rainbowkit";
 import Modal from "antd/es/modal/Modal";
 import GitHubLogin from "react-github-login";
 import { FaCodepen } from "react-icons/fa";
-import {
-  MdEmojiEmotions,
-  MdSlowMotionVideo,
-  MdDataset,
-} from "react-icons/md";
+import { MdEmojiEmotions, MdSlowMotionVideo, MdDataset } from "react-icons/md";
 import { RxBoxModel } from "react-icons/rx";
 import { useDispatch } from "react-redux";
 import GithubImage from "../../../public/svg/github-mark.svg";
@@ -48,10 +45,12 @@ export default function HomepageHeader() {
   const [metamaskAddress, setMetamaskAddress] = useState<string | undefined>(
     ""
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dispatch = useDispatch<any>();
 
   // state of the scroll position and header height
   const [scrollPosition, setScrollPosition] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const headerRef = useRef<any>(null);
   const [headerHeight, setHeaderHeight] = useState(20);
 
@@ -116,10 +115,11 @@ export default function HomepageHeader() {
   // This is to offset the scroll position so that the header
   useEffect(() => {
     if (headerRef?.current) {
-      setHeaderHeight(headerRef.current.clientHeight);
+      setHeaderHeight(headerRef.current?.clientHeight);
     }
   }, [headerRef.current]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onGitHubLoginSuccess = (response: any) => {
     setIsShowAuthModalOpen(false);
 
@@ -143,7 +143,7 @@ export default function HomepageHeader() {
     getUserInfo(accessToken);
   };
 
-  const onGitHubLoginFailure = (response: any) => {
+  const onGitHubLoginFailure = (response: unknown) => {
     console.log("------the data from github-----failed-----", response);
   };
 
@@ -183,8 +183,8 @@ export default function HomepageHeader() {
       <div className="w-full h-full bg-slate-900 dark:bg-black bg-opacity-70 dark:bg-opacity-60 p-[4rem]">
         <img
           src="/gif/logo/CubesShufflingGIF.gif"
-          alt="Commune Logo"
           className="block lg:hidden"
+          alt="Commune Logo"
         />
         <div className="px-10 py-5">
           <div className="flex lg:flex-row flex-col h-1/2">

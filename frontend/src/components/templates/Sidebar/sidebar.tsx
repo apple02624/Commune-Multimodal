@@ -1,8 +1,7 @@
-
-import { FC, useRef, useState } from "react";
-import SimpleBar from "simplebar-react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import "simplebar-react/dist/simplebar.min.css";
+import { FC, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GiAbstract012 } from "react-icons/gi";
@@ -10,6 +9,7 @@ import { GrMultiple, GrTechnology } from "react-icons/gr";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { MdDashboard, MdSlowMotionVideo } from "react-icons/md";
 import { RxBoxModel } from "react-icons/rx";
+import SimpleBar from "simplebar-react";
 import { sidebarStructure } from "./structure";
 
 interface SidebarProps {
@@ -23,7 +23,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
   const [activeName, setActiveName] = useState("");
   const activeLink = window.location.pathname;
 
-  const listRef = useRef<Record<string, HTMLUListElement | null>>({});
+  const listRef = useRef<any>({});
 
   const [isExpand, setIsExpand] = useState(true);
   const [isExpandOnHover, setIsExpandOnHover] = useState(false);
@@ -35,7 +35,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
   };
 
   const handleNavigate = (path: string) => {
-    console.log('asadfsadfsdfsadfsdf', path)
+    console.log("asadfsadfsdfsadfsdf", path);
     setActiveName(path);
   };
 
@@ -88,6 +88,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
     return icons_map[icon];
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const generateMenu = (item: any, index: number, recursive: number = 0) => {
     if (activeName === "" && activeLink.includes(item.link)) {
       setActiveName(item.name);
@@ -139,7 +140,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
                       `${classesActive ? "h-2 w-2" : "h-1 w-1"}`,
                       "bg-current rounded-full duration-200",
                     ].join(" ")}
-                   />
+                  />
                 </div>
               ) : (
                 generateIcon(item.icon)
@@ -178,7 +179,7 @@ const SidebarMenu: FC<SidebarProps> = ({ setExpand }) => {
         </a>
         {"child" in item ? (
           <ul
-            ref={(el) => (listRef.current[item.name] = el)}
+            // ref={(el) => (listRef.current[item.name] = el)}
             className={[
               "overflow-hidden duration-300 ease-in-out",
               isExpand ? "" : isExpandOnHover ? "" : "h-0",
