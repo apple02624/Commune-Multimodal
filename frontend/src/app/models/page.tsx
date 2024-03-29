@@ -6,7 +6,7 @@ export default async function Page() {
   let models: MultimodalItemPropsType[] = [];
   try {
     const response = await axios.get(
-      "https://huggingface.co/api/spaces?full=full&direction=-1&sort=likes&search=multimodal&limit=5"
+      "https://huggingface.co/api/spaces?full=full&direction=-1&sort=likes&search=multimodal&limit=10"
     );
 
     models = response.data;

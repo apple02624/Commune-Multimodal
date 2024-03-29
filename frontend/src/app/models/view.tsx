@@ -18,10 +18,10 @@ const View = ({ models }: { models: MultimodalItemPropsType[] }) => {
   return (
     <div>
       <header
-        className={`relative z-10 dark:bg-gray-900 text-center h-screen overflow-hidden duration-500`}
+        className={`relative z-10 dark:bg-gray-900 text-center h-fit overflow-hidden duration-500`}
         id="dashboard"
       >
-        <div className="w-full h-full bg-slate-900 dark:bg-black bg-opacity-70 dark:bg-opacity-60 p-[4rem]">
+        <div className="w-full h-full py-[60px] bg-slate-900 dark:bg-black bg-opacity-70 dark:bg-opacity-60 p-[4rem]">
           <h2 className="text-4xl mx-auto p-10 text-white">
             Multimodal Models
           </h2>
