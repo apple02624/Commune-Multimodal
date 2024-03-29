@@ -1,20 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import MultimodalItem, {
+  MultimodalItemPropsType,
+} from "@/components/molecules/multimodal-item";
 
-interface Model {
-  id: string;
-  name: string;
-  description: string;
-  demo_picture: string;
-}
-
-interface Props {
-  models: Model[];
-}
-
-const View: React.FC<Props> = ({ models }) => {
+const View = ({ models }: { models: MultimodalItemPropsType[] }) => {
   console.log(models);
+  const [loadedModules, setLoadedModules] = useState<MultimodalItemPropsType[]>(
+    []
+  );
+
+  useEffect(() => {
+    setLoadedModules(models);
+  }, [models]);
+
   return (
     <div>
       <header
@@ -22,7 +22,9 @@ const View: React.FC<Props> = ({ models }) => {
         id="dashboard"
       >
         <div className="w-full h-full bg-slate-900 dark:bg-black bg-opacity-70 dark:bg-opacity-60 p-[4rem]">
-          <h2 className="text-4xl mx-auto p-10 text-white">Models</h2>
+          <h2 className="text-4xl mx-auto p-10 text-white">
+            Multimodal Models
+          </h2>
 
           <div className="px-10 py-5">
             <div className="flex lg:flex-row flex-col h-1/2">
@@ -290,6 +292,17 @@ const View: React.FC<Props> = ({ models }) => {
                 </svg>
               </div>
             </div>
+          </div>
+
+          <div className="flex justify-start flex-wrap gap-4">
+            {loadedModules.map((item, idx) => (
+              <MultimodalItem
+                key={idx}
+                id={item.id}
+                cardData={item.cardData}
+                author={item.author}
+              />
+            ))}
           </div>
         </div>
       </header>
