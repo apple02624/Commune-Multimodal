@@ -61,10 +61,6 @@ export default function Content() {
                 Models
               </h1>
               <div className="flex flex-col space-y-10">
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-center items-center justify-center px-2 h-[700px]">
-                    Get Started
-                </div>
-                 */}
                 <div
                   className="bg-slate-900 rounded-lg bg-opacity-20 hover:bg-opacity-40 shadow-custom hover:shadow-2xl text-center 
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
