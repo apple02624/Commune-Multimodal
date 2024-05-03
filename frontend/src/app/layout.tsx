@@ -30,7 +30,6 @@ import { publicProvider } from "wagmi/providers/public";
 import "@fontsource/source-code-pro";
 import { projectId } from "../config";
 import Loading from "@/components/molecules/bittensor/loading";
-import NavigationBar from "@/components/organisms/navbar/navigation-bar";
 import SidebarMenu from "@/components/templates/Sidebar/sidebar";
 import Footer from "@/components/templates/footer/footer";
 import Head from "@/components/templates/head";
@@ -113,7 +112,6 @@ export default function RootLayout({
               <Provider store={store}>
                 <ThemeProvider>
                   {/* <Banner /> */}
-                  <NavigationBar />
                   <SidebarMenu setExpand={setSideMenuIsExpand} />
                   <div
                     className={`flex-1 min-h-screen mx-0 bg-slate-100 transition-all duration-300 ease-in-out ${

@@ -214,7 +214,7 @@ export default function HomepageHeader() {
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick={() => setIsShowAuthModalOpen(true)}
+                  //onClick={() => setIsShowAuthModalOpen(true)}
                 >
                   <MdEmojiEmotions width={50} height={50} />
                   Demo
@@ -224,7 +224,7 @@ export default function HomepageHeader() {
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick={() => setIsShowAuthModalOpen(true)}
+                  //onClick={() => setIsShowAuthModalOpen(true)}
                 >
                   <FaCodepen width={50} height={50} />
                   Code
@@ -234,7 +234,7 @@ export default function HomepageHeader() {
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick={() => setIsShowAuthModalOpen(true)}
+                  //onClick={() => setIsShowAuthModalOpen(true)}
                 >
                   <RxBoxModel width={50} height={50} />
                   Model
@@ -244,7 +244,7 @@ export default function HomepageHeader() {
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick={() => setIsShowAuthModalOpen(true)}
+                  //onClick={() => setIsShowAuthModalOpen(true)}
                 >
                   <MdDataset width={50} height={50} />
                   Dataset
@@ -254,7 +254,7 @@ export default function HomepageHeader() {
                   hover:bg-slate-200 duration-200 text-xl text-white hover:text-white 
                   font-sans font-semibold justify-center px-2 py-3 cursor-pointer flex gap-3 items-center
                 "
-                  onClick={() => setIsShowAuthModalOpen(true)}
+                  //onClick={() => setIsShowAuthModalOpen(true)}
                 >
                   <MdSlowMotionVideo width={50} height={50} />
                   Video
