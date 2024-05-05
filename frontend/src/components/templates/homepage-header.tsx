@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -12,8 +11,10 @@ import { RxBoxModel } from "react-icons/rx";
 import { useDispatch } from "react-redux";
 import GithubImage from "../../../public/svg/github-mark.svg";
 import MetaMaskImage from "../../../public/svg/metamask.svg";
+import MultimodalIcon from "../../../public/img/frontpage/icon.jpeg";
 import PolkadotImage from "../../../public/svg/polkadot.svg";
 import { saveMetaMaskAddress } from "@/store/action/transaction.record.action";
+import {useRouter} from "next/navigation"
 
 const words: string[] = [
   "developers.",
@@ -53,6 +54,8 @@ export default function HomepageHeader() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const headerRef = useRef<any>(null);
   const [headerHeight, setHeaderHeight] = useState(20);
+
+  const router=useRouter()
 
   // typeWriter effect
   // give me the context of this whole useEffect
@@ -171,6 +174,11 @@ export default function HomepageHeader() {
     }
   }, [isLoggedIn, metamaskAddress]);
 
+  const openModelPage = () => {
+    1;
+    router.push("/models");
+  };
+
   return (
     <header
       ref={headerRef}
@@ -188,14 +196,14 @@ export default function HomepageHeader() {
         />
         <div className="px-10 py-5">
           <div className="flex lg:flex-row flex-col h-1/2">
-            <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-              <div className="w-auto sm:w-full">
+            <div className="w-full flex flex-col items-center justify-center">
+              <div className="w-auto sm:w-full mt-40">
                 <h1 className="text-4xl sm:text-6xl sm:pb-3 dark:text-white">
                   {TITLE}
                 </h1>
 
                 <div className="hidden sm:block">
-                  <p className="hero__subtitle text-xl sm:text-xl dark:text-white">
+                  <p className="hero__subtitle sm:text-xl dark:text-white text-[20px]">
                     {TAGLINE}
                     <br />
                     <span
@@ -514,11 +522,21 @@ export default function HomepageHeader() {
                   </radialGradient>
                 </defs>
               </svg>
+             
             </div>
-            <div className="hidden lg:block w-full lg:w-1/2 h-full lg:-mr-44 ">
-              <img src="gif/logo/commune.gif" alt="Commune Logo" className="" />
-            </div>
+           
           </div>
+
+          <div className="flex items-center justify-center mt-40">
+          <Image
+          src={MultimodalIcon}
+          alt="login with Metamask"
+          width={200}
+          height={100}
+          onClick={openModelPage}
+          className="cursor-pointer rounded-xl"
+        />
+      </div>
         </div>
         {isShowAuthModalOpen && (
           <Modal
