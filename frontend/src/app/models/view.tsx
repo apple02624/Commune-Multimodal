@@ -18,13 +18,13 @@ const View = ({ models }: { models: MultimodalItemPropsType[] }) => {
   return (
     <div>
       <header
-        className={`relative z-10 dark:bg-gray-900 text-center overflow-hidden duration-500 bg-[url('/img/Logo.jpg')]`}
+        className={`relative z-10 dark:bg-gray-900 text-center overflow-hidden duration-500 bg-[url('/img/Logo.jpg')] bg-cover`}
         id="dashboard"
       >
         <div className="w-full h-full py-[60px] bg-slate-900 dark:bg-black bg-opacity-70 dark:bg-opacity-60 p-[4rem]">
-          <h2 className="text-4xl mx-auto p-10 text-white">
+          <span className="text-[40px] mx-auto p-10 text-white">
             Multimodal Models
-          </h2>
+          </span>
 
           {/* <div className="px-10 py-5">
             <div className="flex lg:flex-row flex-col h-1/2">
@@ -294,7 +294,7 @@ const View = ({ models }: { models: MultimodalItemPropsType[] }) => {
             </div>
           </div> */}
 
-          <div className="flex justify-start flex-wrap gap-4">
+          <div className="flex justify-center items-center flex-wrap gap-4 mt-4">
             {loadedModules.map((item, idx) => (
               <MultimodalItem
                 key={idx}
